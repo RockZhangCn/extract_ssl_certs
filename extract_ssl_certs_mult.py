@@ -1,4 +1,4 @@
-#coding=gbk
+#coding=utf-8
 #version:20161109
 import dpkt
 import struct, socket, sys, os, argparse, md5
