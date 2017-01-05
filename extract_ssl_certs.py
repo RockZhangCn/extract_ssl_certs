@@ -139,9 +139,9 @@ def extract_file(filepath):
                         this_sub_cert=sslcombined[curpos:curpos+this_sub_len]
                         sub_cert_len+=this_sub_len+3    #+3是“证书长度”，3个字节
                         curpos+=this_sub_len
-                        md5cert=md5.md5(this_sub_cert).hexdigest()
-                        filename='%s_%d_%d_%s.cer' % (srcip, sport, sub_cert_count, md5cert)
-                        with open('certs\\%s' % filename, 'wb') as f:
+                        #md5cert=md5.md5(this_sub_cert).hexdigest()
+                        filename='%s_%d_%d.crt' % (srcip, sport, sub_cert_count)
+                        with open('certs/%s' % filename, 'wb') as f:
                             f.write(this_sub_cert)
                         log.info(filename)
                         sub_cert_count+=1         
